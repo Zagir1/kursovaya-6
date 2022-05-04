@@ -47,8 +47,8 @@ public class CreatePDF {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath+"webapps/kursovaya/Check.pdf";
-		String fontpath =abspath+"webapps/kursovaya/fonts/times.ttf";
+		filepath=abspath+"webapps/kursovaya-6/Check.pdf";
+		String fontpath =abspath+"webapps/kursovaya-6/fonts/times.ttf";
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));

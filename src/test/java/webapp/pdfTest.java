@@ -44,7 +44,7 @@ public class pdfTest {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath+"kursovaya/order.pdf";
+		filepath=abspath+"kursovaya-6/order.pdf";
 		assertTrue(Files.exists(Paths.get(filepath)));
 		
 	}
@@ -73,7 +73,7 @@ public class pdfTest {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath+"kursovaya/order.pdf";
+		filepath=abspath+"kursovaya-6/order.pdf";
 		String fontpath = Objects.requireNonNull(CreatePDF.class.getResource("/fonts/times.ttf")).getPath();
 		
 		try {	
