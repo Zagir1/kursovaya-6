@@ -39,7 +39,7 @@ public class order {
 	public static HashSet<String> services = new HashSet<>();
 	
 	/** The area ratio. */
-	public static int area_ratio;
+	public static int area_ratio = 500;
 	
 	/** The price. */
 	public static int price;
@@ -185,9 +185,9 @@ public class order {
 	 * @param type the type
 	 */
 	public static void calculate(int area, String type) {
-		price = area*area_ratio + price_types.get(type) - promo_price;
 		setArea(area);
 		setType(type);
+		price = area*area_ratio + price_types.get(type) - promo_price;
 		for (String service: services) {
 			if (service != null) {
 				price = price + price_services.get(service);
