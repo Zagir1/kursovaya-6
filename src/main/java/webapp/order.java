@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Objects;
@@ -203,7 +204,7 @@ public class order {
 	public static void initPrices() throws URISyntaxException, IOException {
 		
 		File file = new File(order.class.getResource("/txt/service_prices.txt").toURI());
-		FileReader fileReader = new FileReader(file);
+		FileReader fileReader = new FileReader(file, StandardCharsets.UTF_8);
 		BufferedReader reader = new BufferedReader(fileReader);
 		String line = reader.readLine();
 		int i;
