@@ -36,8 +36,7 @@ public class calculateTest {
 	@Test
 	public void test() throws URISyntaxException, IOException {
 		order.initPrices();
-		String s = "Генеральная";
-		order.calculate(10, s);
+		order.calculate(10, "Генеральная");
 		if (order.getPrice() != 10000) {
 			fail("Ошибка в вычислениях");
 		}
