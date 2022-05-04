@@ -43,7 +43,7 @@ public class jspTest {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath+"kursovaya/src/main/webapp/";
+		filepath=abspath+"kursovaya-6/src/main/webapp/";
 		assertTrue(Files.exists(Paths.get(filepath + "admin.jsp")));
 		assertTrue(Files.exists(Paths.get(filepath + "authorization.jsp")));
 		assertTrue(Files.exists(Paths.get(filepath + "calculator.jsp")));
