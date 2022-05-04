@@ -204,21 +204,25 @@ public class order {
 	public static void initPrices() throws URISyntaxException, IOException {
 		
 		File file = new File(order.class.getResource("/txt/service_prices.txt").toURI());
-		FileReader fileReader = new FileReader(file, StandardCharsets.UTF_8);
+		FileReader fileReader = new FileReader(file);
 		BufferedReader reader = new BufferedReader(fileReader);
 		String line = reader.readLine();
+		byte[] bytes;
+		String encodedLine;
 		int i;
 		String service = "";
 		String price = "";
 		while (line != null) {
+			bytes = line.getBytes(StandardCharsets.UTF_8);
+			encodedLine = new String(bytes, StandardCharsets.UTF_8);
 			i = 0;
-			while (line.charAt(i) != ':') {
-				service = service + line.charAt(i);
+			while (encodedLine.charAt(i) != ':') {
+				service = service + encodedLine.charAt(i);
 				i = i + 1;
 			}
 			i = i + 1;
-			while (i < line.length()) {
-				price = price + line.charAt(i);
+			while (i < encodedLine.length()) {
+				price = price + encodedLine.charAt(i);
 				i = i + 1;
 			}
 			int price_try = Integer.parseInt(price);
@@ -235,6 +239,8 @@ public class order {
 		line = reader.readLine();
 		String type = "";
 		while (line != null) {
+			bytes = line.getBytes(StandardCharsets.UTF_8);
+			encodedLine = new String(bytes, StandardCharsets.UTF_8);
 			i = 0;
 			while (line.charAt(i) != ':') {
 				type = type + line.charAt(i);
@@ -258,6 +264,8 @@ public class order {
 		reader = new BufferedReader(fileReader);
 		line = reader.readLine();
 		while (line != null) {
+			bytes = line.getBytes(StandardCharsets.UTF_8);
+			encodedLine = new String(bytes, StandardCharsets.UTF_8);
 			order.setArea_ratio(Integer.parseInt(line));
 			line = reader.readLine();
 		}
