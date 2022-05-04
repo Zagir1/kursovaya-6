@@ -9,7 +9,7 @@
 <body>
 	<h1>Заказ оформлен!</h1>
 	${test}
-	<a href="/kursovaya/order.pdf">Открыть pdf-файл заказа</a>
-	<a href="/kursovaya/order.pdf" download>Скачать pdf-файл заказа</a>
+	<a href="/kursovaya-6/order.pdf">Открыть pdf-файл заказа</a>
+	<a href="/kursovaya-6/order.pdf" download>Скачать pdf-файл заказа</a>
 </body>
 </html>
