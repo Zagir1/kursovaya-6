@@ -286,7 +286,7 @@ public class order {
 		for(int i=0;i<(lengthpath-1);i++) {
 			abspath=abspath+parsfilepath[i]+"/";
 		}
-		filepath=abspath+"webapps/kursovaya/order.pdf";
+		filepath=abspath+"webapps/kursovaya-6/order.pdf";
 		String fontpath = Objects.requireNonNull(CreatePDF.class.getResource("/fonts/times.ttf")).getPath();
 		
 		try {	
