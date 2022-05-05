@@ -188,7 +188,7 @@ public class order {
 		setArea(area);
 		setType(type);
 		price = area*area_ratio;
-		price = price + price_types.get(type) - promo_price;
+		price = price + price_types.get(type);
 		price = price - promo_price;
 		for (String service: services) {
 			if (service != null) {
