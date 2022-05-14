@@ -3,6 +3,7 @@ package webapp;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
@@ -36,6 +37,15 @@ public class registration extends HttpServlet {
 			if (user_pass.containsKey(request.getParameter("username"))) {
 				request.setAttribute("error", "Такой пользователь уже существует");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
+			} else {
+				user_pass.put(request.getParameter("username"), request.getParameter("password"));
+				File file = new File(authorization.class.getResource("/txt/users.txt").toURI());
+				FileWriter writer = new FileWriter(file);
+				for (String user: user_pass.keySet()) {
+					writer.write(user + ":" + user_pass.get(user) + "\n");
+				}
+				writer.flush();
+				writer.close();
 			}
 		} catch (URISyntaxException | IOException e) {
 			// TODO Auto-generated catch block
