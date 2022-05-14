@@ -55,6 +55,7 @@ public class calculator extends HttpServlet {
 		}
 		
 		order.calculate(area_try, type);
+		order.setPromo_price(0);
 		request.setAttribute("price" ,order.getPrice());
 		request.getRequestDispatcher("/credentials.jsp").forward(request, response);
 	}
